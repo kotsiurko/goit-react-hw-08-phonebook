@@ -9,11 +9,11 @@ const getActions = type => extraActions.map(action => action[type]);
 const initialState = {
   items: [],
   isLoading: true,
-  error: '',
+  error: null,
 };
 const handlePending = (state) => {
   state.isLoading = true;
-  state.error = '';
+  state.error = null;
 };
 
 const handleRejected = (state, action) => {
@@ -23,7 +23,6 @@ const handleRejected = (state, action) => {
 
 const handleFulfilled = state => {
   state.isLoading = false;
-  state.error = null;
 };
 
 const contactsSlice = createSlice({
